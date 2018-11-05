@@ -14,7 +14,6 @@ class ViewController: UIViewController {
     var chartView: PieChartView!
     var pieChartDataSet: ChartDataSet!
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -36,7 +35,6 @@ class ViewController: UIViewController {
 //        chartView.drawHoleEnabled = false
 
 
-
         // call setGraph() func in order to set Data
         pieChartData = setGraph()
 
@@ -45,26 +43,17 @@ class ViewController: UIViewController {
         // set CGRect constraints to chart
         chartView = PieChartView(frame: CGRect(x: 0, y: view.safeAreaInsets.bottom, width: view.frame.width, height: view.frame.height / 2))
 
-
         chartView.data = pieChartData
 
-
-
-        
         // PieChart
         chartView.centerText = "Balances"
 
-
         self.view.addSubview(chartView)
-
     }
-
 
 
      func setGraph() -> PieChartData
      {
-
-
         // Prepare Data Array
         var entries: [PieChartDataEntry] = Array()
 
@@ -82,7 +71,6 @@ class ViewController: UIViewController {
         let dataSet = PieChartDataSet(values: entries, label: "Crypto Currencies")
 
 
-
         // PieChartColor
         var colors: [UIColor] = []
 
@@ -97,26 +85,8 @@ class ViewController: UIViewController {
 
         dataSet.colors = colors
 
-
-
         return PieChartData(dataSet: dataSet)
 
 }
-
-
-
-class LineChartFormatter: NSObject, IAxisValueFormatter{
-
-    // x軸のラベルの値を受け取るプロパティつくる。initializeされたときはnilがはいるようにオプショナル型にしておく
-    var xAxisStringArray: [String]!
-
-    // value[Double]で受け取る数値を、StringArrayでmappingするメソッド
-    func stringForValue(_ value: Double, axis: AxisBase?) -> String {
-        // 0 -> Jan, 1 -> Feb...
-        return xAxisStringArray[Int(value)]
-
-    }
-}
-
 
 }
