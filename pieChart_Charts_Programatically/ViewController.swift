@@ -22,23 +22,17 @@ class ViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
-
         // PieChartData instance
         var pieChartData = PieChartData()
 //
 //        // グラフの中央にテキストを表示
 //        chartView.centerText? = "2018/11/05"
 
-
-
 //        // PieChartを真ん中まで塗りつぶす。Defaultではtrue
 //        chartView.drawHoleEnabled = false
 
-
         // call setGraph() func in order to set Data
         pieChartData = setGraph()
-
-
 
         // set CGRect constraints to chart
         chartView = PieChartView(frame: CGRect(x: 0, y: view.safeAreaInsets.bottom, width: view.frame.width, height: view.frame.height / 2))
@@ -60,13 +54,12 @@ class ViewController: UIViewController {
 
         // Input Data Set
 
-        entries.append(PieChartDataEntry(value: 20.0, label: "BTC"))
-        entries.append(PieChartDataEntry(value: 4.0, label: "ETC"))
-        entries.append(PieChartDataEntry(value: 6.0, label: "AUGUR"))
-        entries.append(PieChartDataEntry(value: 3.0, label: "Golem"))
-        entries.append(PieChartDataEntry(value: 12.0, label: "Litecoin"))
-        entries.append(PieChartDataEntry(value: 16.0, label: "DASH"))
-
+        entries.append(PieChartDataEntry(value: 20.0, label: "BTC", icon: #imageLiteral(resourceName: "💲BTC")))
+        entries.append(PieChartDataEntry(value: 4.0, label: "ETC", icon: #imageLiteral(resourceName: "💲ETH")))
+        entries.append(PieChartDataEntry(value: 6.0, label: "AUGUR", icon: #imageLiteral(resourceName: "💲AUGUR")))
+        entries.append(PieChartDataEntry(value: 3.0, label: "Golem", icon: #imageLiteral(resourceName: "💲Golem")))
+        entries.append(PieChartDataEntry(value: 12.0, label: "Litecoin", icon: #imageLiteral(resourceName: "💲LingtCoin")))
+        entries.append(PieChartDataEntry(value: 18, label: "DASH"))
 
         let dataSet = PieChartDataSet(values: entries, label: "Crypto Currencies")
 
