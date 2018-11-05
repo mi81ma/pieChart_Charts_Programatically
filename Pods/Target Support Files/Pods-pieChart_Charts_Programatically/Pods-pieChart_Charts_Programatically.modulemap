@@ -1,0 +1,6 @@
+framework module Pods_pieChart_Charts_Programatically {
+  umbrella header "Pods-pieChart_Charts_Programatically-umbrella.h"
+
+  export *
+  module * { export * }
+}
